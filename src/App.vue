@@ -1,85 +1,488 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+var loader = function () {
+  setTimeout(function () {
+    let load = document.getElementById('loader')
+    if (typeof load != 'undefined' || load != null) {
+      load.classList.remove('show')
+    }
+  }, 500)
+}
+loader()
+
+const project = ref({
+  Frontend: [
+    {
+      title: 'Hidok',
+      img: 'hidok.png',
+    },
+    {
+      title: 'Cloudcare',
+      img: 'cloudcare.png',
+    },
+    {
+      title: 'Manulife',
+      img: 'manulife.png',
+    },
+    {
+      title: 'UD SODARA',
+      img: 'ud-sodara.png',
+    },
+    {
+      title: 'Dashboard Lintasarta',
+      img: 'Dashboard Lintasarta.png',
+    },
+  ],
+  FullStack: [
+    {
+      title: 'LRT Jakarta',
+      img: 'lrt jakarta.png',
+    },
+    {
+      title: 'Kejati Yogyakarta',
+      img: 'kejati.png',
+    },
+    {
+      title: 'Smart Ics',
+      img: 'smart-ics.png',
+    },
+    {
+      title: 'Hidok',
+      img: 'hidok.png',
+    },
+    {
+      title: 'Direct Carrier Billing Configuration',
+      img: 'dcb.png',
+    },
+    {
+      title: 'DINAS PUSDATARU Provinsi Jawa Tengah',
+      img: 'databasePSDA.png',
+    },
+  ],
+})
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <!-- Nav Bar Start -->
+  <div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand">ApriDev</a>
+      <button
+        type="button"
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+          <a href="#home" class="nav-item nav-link active">Home</a>
+          <a href="#about" class="nav-item nav-link">About</a>
+          <a href="#service" class="nav-item nav-link">Service</a>
+          <a href="#experience" class="nav-item nav-link">Experience</a>
+          <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+          <a href="#contact" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </div>
+  <!-- Nav Bar End -->
 
-  <RouterView />
+  <!-- Hero Start -->
+  <div class="hero" id="home">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-md-6">
+          <div class="hero-content">
+            <div class="hero-text">
+              <p>Hello, I'm</p>
+              <h1>Apriyanto</h1>
+              <h2></h2>
+              <div class="typed-text">Frontend Developer, Full Stack Developer, Web Developer</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 d-none d-md-block">
+          <div class="hero-image" style="height: 90vh"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hero End -->
+
+  <!-- About Start -->
+  <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="about-img">
+            <img src="@/assets/img/about.jpg" alt="Image" />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-content">
+            <div class="section-header text-left">
+              <p>Learn About Me</p>
+              <h2>Learn About Me</h2>
+            </div>
+            <h4>Last Education</h4>
+            <div class="about-text">
+              Universitas Tecnology Yogyakarta (S1 Information Technology)
+            </div>
+            <h4>6 Years Experience</h4>
+            <div class="about-text">
+              <p>
+                In the past 6 years I have worked in the office for around 3 years, remotely for
+                around 3 years, besides that I also do freelance work if there are projects from
+                friends. As a programmer, sometimes it's a shame to get a frontend position,
+                sometimes a fullstack position.
+              </p>
+            </div>
+            <h4>My Skill:</h4>
+            <div class="skills">
+              <div class="skill-name">
+                <p>Html,Css,Sass,Scss</p>
+                <p>95%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="95"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Bootstrap,Material,AntDesign</p>
+                <p>90%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Js,Jquery</p>
+                <p>90%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Angular,React,Vue</p>
+                <p>85%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>React Native</p>
+                <p>50%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Laravel</p>
+                <p>80%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Mysql, Postgree</p>
+                <p>85%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="skill-name">
+                <p>Git, Docker</p>
+                <p>80%</p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Service Start -->
+  <div class="service" id="service">
+    <div class="container text-light">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p style="background: none">What I do</p>
+        <h2 class="text-light">Awesome Quality Services</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fa fa-laptop"></i>
+            </div>
+            <div class="service-text">
+              <h3 class="text-light">Frontend Development</h3>
+              <p>
+                I have experience working as a frontend for approximately 6 years, the tools used
+                vary according to client needs
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fa fa-laptop-code"></i>
+            </div>
+            <div class="service-text">
+              <h3 class="text-light">Fullstack Development</h3>
+              <p>
+                I have experience working as a Fullstack for approximately 2 years, the tools I
+                often use are PHP and Laravel
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="service-text">
+              <h3 class="text-light">Mobile Development</h3>
+              <p>
+                I have experience working on mobile app projects, namely with Ionic and React Native
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service End -->
+
+  <!-- Experience Start -->
+  <div class="experience" id="experience">
+    <div class="container">
+      <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>My Resume</p>
+        <h2>Working Experience</h2>
+      </header>
+      <div class="timeline">
+        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+          <div class="timeline-text">
+            <div class="timeline-date">2018 - 2019</div>
+            <h2>Full Stack Developer</h2>
+            <h4>IDWEBHOST (Work From Office)</h4>
+            <p>
+              In this company I work in a full stack position, the tool that is often used is
+              PHP,JavaScript,Jquery,Bootstrap. Here I work with a team of approximately 2-3 people.
+              if there is a mobile project that runs on the Ionic framework
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+          <div class="timeline-text">
+            <div class="timeline-date">2019-2021</div>
+            <h2>Frontend Developer</h2>
+            <h4>Intersolusi Cipta Softindo (Work From Office)</h4>
+            <p>
+              In this company I work in the Frontend Developer position. The tool that I often use
+              is Javascript,Jquery,Bootstrap,Material,React. Here, sometimes I work alone, sometimes
+              in a team of 2-3 people
+            </p>
+          </div>
+        </div>
+        <div></div>
+        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+          <div class="timeline-text">
+            <div class="timeline-date">2021-2022</div>
+            <h2>Frontend Developer</h2>
+            <h4>PT ICP CIPTA PRIMA (Hybrid)</h4>
+            <p>
+              In this company I work in the Frontend Developer position. The tool that I often use
+              is Javascript,Jquery,Vue,Nuxt,Bootstrap. Here, sometimes I work alone, sometimes in a
+              team of 2-3 people
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+          <div class="timeline-text">
+            <div class="timeline-date">2023-2024</div>
+            <h2>Frontend Developer</h2>
+            <h4>PT Gama Informatika (Work From Home)</h4>
+            <p>
+              In this company I work in the Frontend Development position. The tool that I often use
+              is Javascript,Jquery,Bootstrap,Angular,Vue,Php Native. Here, I just work alone,
+              because the only employee in the fortend position is myself.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+          <div class="timeline-text">
+            <div class="timeline-date">2022-2024</div>
+            <h2>Web Developer</h2>
+            <h4>PT Bale Labs Indonesia (Wrok From Home)</h4>
+            <p>
+              In this company I work in the Web Developer position. The tool that I often use is
+              Javascript,Jquery,React,Angular,Bootstrap,Material,AntDesign,Laravel. Here, sometimes
+              I work alone, sometimes in a team of 2-3 people
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Job Experience End -->
+
+  <!-- Banner Start -->
+  <!-- <div class="banner wow zoomIn" data-wow-delay="0.1s">
+    <div class="container">
+      <div class="section-header text-center">
+        <p>Reasonable Price</p>
+        <h2>Get A <span>Special</span> Price</h2>
+      </div>
+      <div class="container banner-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi.
+          Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida
+          condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus.
+        </p>
+        <a class="btn">Pricing Plan</a>
+      </div>
+    </div>
+  </div> -->
+  <!-- Banner End -->
+
+  <!-- Portfolio Start -->
+  <div class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>My Portfolio</p>
+        <h2>My Portfolio</h2>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <ul id="portfolio-filter">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-1">Frontend Developer</li>
+            <li data-filter=".filter-2">Fullstack Developer</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row portfolio-container">
+        <div
+          v-for="(item, index) in project.Frontend"
+          :key="index"
+          class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp"
+          data-wow-delay="0.0s"
+        >
+          <div class="portfolio-wrap">
+            <div class="portfolio-img">
+              <img :src="'/src/assets/img/project/' + item.img" :alt="item.title" />
+            </div>
+            <div class="portfolio-text">
+              <h3>{{ item.title }}</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          v-for="(item, index) in project.FullStack"
+          :key="index"
+          class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp"
+          data-wow-delay="0.0s"
+        >
+          <div class="portfolio-wrap">
+            <div class="portfolio-img">
+              <img :src="'/src/assets/img/project/' + item.img" :alt="item.title" />
+            </div>
+            <div class="portfolio-text">
+              <h3>{{ item.title }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio End -->
+
+  <!-- Footer Start -->
+  <div class="footer wow fadeIn" data-wow-delay="0.3s">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="footer-info">
+          <h2>Apriyanto</h2>
+          <h3>Tanjunggunung, Tanjungharjo, Nanggulan, Kulon Progo, Yogyakarta,Indonesia</h3>
+          <div class="footer-menu">
+            <p>+6285700997218</p>
+            <p>yapri177@gmail.com</p>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/apryant5/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>
+          &copy; <a href="#">ApriDev</a>, All Right Reserved | Designed By
+          <a href="/">ApriDev</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to top button -->
+  <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Pre Loader -->
+  <div id="loader" class="show">
+    <div class="loader"></div>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
